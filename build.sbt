@@ -4,7 +4,7 @@ ThisBuild / scalaVersion := "2.13.8"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "sbt-docker-scopt"
+    name := "sbt-docker-scopt2"
   )
 
 enablePlugins(DockerPlugin)
@@ -29,6 +29,14 @@ docker / dockerfile := {
     entryPoint("java", "-cp", classpathString, mainclass)
   }
 }
+
+val appName = "ArgsPrintApp"
+val appVersion = 1.2
+val versionName = s"_${appVersion}"
+
+docker / imageNames := Seq(
+  // Sets the latest tag
+  ImageName(appName+versionName))
 
 libraryDependencies += "com.github.scopt" %% "scopt" % "4.0.1"
 

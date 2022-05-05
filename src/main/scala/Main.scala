@@ -24,7 +24,7 @@ object Main extends App {
     val config = OParser.parse(
         myParser,
         args,
-        Config(numbers = 0, words = "")).getOrElse {
+        Config(numbers = 999, words = "")).getOrElse {
         println("Not enough or incorrect command-line arguments. Exiting...")
         sys.exit(-1)
     }
