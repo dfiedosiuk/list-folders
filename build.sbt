@@ -4,7 +4,7 @@ ThisBuild / scalaVersion := "2.13.8"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "sbt-docker-scopt2"
+    name := "sbt-docker-list-folders-app"
   )
 
 enablePlugins(DockerPlugin)
@@ -30,8 +30,8 @@ docker / dockerfile := {
   }
 }
 
-val appName = "ArgsPrintApp"
-val appVersion = 1.2
+val appName = "list-folders"
+val appVersion = 1.0
 val versionName = s"_${appVersion}"
 
 docker / imageNames := Seq(
